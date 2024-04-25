@@ -39,13 +39,13 @@ h1 {
 .h1 {
   font-family: "Aptos Display", "Century Gothic", monospace;
 
-  font-size: 3em;
+  font-size: 48px;
 }
 
 .h2 {
   font-family: "Aptos Display", "Century Gothic", monospace;
 
-  font-size: 1em;
+  font-size: 16px;
 }
 
 .text-animation {
@@ -63,7 +63,7 @@ h1 {
   left: 50%;
   background: white;
   width: 0;
-  height: 1.2em;
+  height: 19.2px;
   -webkit-transform: translate(-50%, -55%);
   -ms-transform: translate(-50%, -55%);
   transform: translate(-50%, -55%);
@@ -74,7 +74,7 @@ h1 {
 }
 
 .text-animation.state-2:before {
-  width: 0.5em;
+  width: 8px;
 }
 
 .text-animation.state-3 {
