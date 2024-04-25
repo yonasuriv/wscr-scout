@@ -25,8 +25,8 @@ h1 {
 
 .decode-text {
   width: 100%;
-  margin-top: -8em;
-  margin-bottom: 8em;
+  margin-top: -128px;
+  margin-bottom: 128px;
   font-size: 30px;
   text-align: center;
 }
@@ -340,7 +340,7 @@ body {
 .search-bar {
   border: 1px solid rgb(253, 0, 63);
   background-color: black;
-  width: 690px;
+  width: 830px;
   height: 55px;
   border-radius: 30px;
   display: flex;
