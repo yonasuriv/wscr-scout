@@ -25,21 +25,21 @@ h1 {
 
 .decode-text {
   width: 100%;
-  margin-top: -128px;
-  margin-bottom: 128px;
-  font-size: 30px;
+  margin-top: -78px;
+  margin-bottom: 98px;
+  font-size: 42px;
   text-align: center;
 }
 
 .space {
   display: inline-block;
-  width: 2px;
+  width: 0px;
 }
 
 .h1 {
   font-family: "Aptos Display", "Century Gothic", monospace;
 
-  font-size: 48px;
+  font-size: 52px;
 }
 
 .h2 {
@@ -74,7 +74,7 @@ h1 {
 }
 
 .text-animation.state-2:before {
-  width: 8px;
+  width: 10px;
 }
 
 .text-animation.state-3 {
@@ -105,7 +105,7 @@ h1 {
   left: 50%;
   width: 520px;
   height: 520px;
-  margin: -100px 0 0 -290px;
+  margin: -50px 0 0 -290px;
 }
 
 .sphere path {
