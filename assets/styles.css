@@ -1,5 +1,5 @@
 * {
-  font-family: "Share Tech Mono", "Aptos Display", "Century Gothic", monospace;
+  font-family: "Red Hat Display", "Bebas Neue", "Share Tech Mono", "Aptos Display", "Century Gothic", monospace;
   box-sizing: border-box;
   margin: 0;
 }
@@ -22,6 +22,8 @@ h1 {
 
 
 @import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);
+@import url(https://fonts.googleapis.com/css?family=Bebas+Neue);
+@import url(https://fonts.googleapis.com/css?family=Red+Hat+Display);
 
 .decode-text {
   width: 100%;
@@ -39,13 +41,14 @@ h1 {
 .h1 {
   font-family: "Aptos Display", "Century Gothic", monospace;
 
-  font-size: 52px;
+  font-size: 64px;
 }
 
 .h2 {
   font-family: "Aptos Display", "Century Gothic", monospace;
 
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 900;
 }
 
 .text-animation {
@@ -190,11 +193,11 @@ h1 {
   z-index: 100000;
   font-size: 1.4em;
   overflow: hidden;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Red Hat Display', 'Bebas Neue', 'Share Tech Mono', monospace;
 }
 
 .text-content * {
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Red Hat Display', 'Bebas Neue', 'Share Tech Mono', monospace;
 }
 
 .btn {
@@ -338,19 +341,20 @@ body {
 }
 
 .search-bar {
-  border: 1px solid rgb(253, 0, 63);
+  border: 2px solid rgb(253, 0, 63);
   background-color: black;
   width: 830px;
-  height: 55px;
+  height: 65px;
   border-radius: 30px;
   display: flex;
   align-items: center;
   padding-left: 15px;
+  margin-top: 20px;
 }
 
 .search-bar:hover {
   background-color: black;
-  box-shadow: 0 1px 15px rgb(253, 0, 63);
+  box-shadow: 3px 3px 30px rgb(253, 0, 63);
   border-color: rgb(253, 0, 63);
 }
 
@@ -365,8 +369,9 @@ body {
   color: white;
   flex-grow: 1;
   height: 30px;
-  margin-right: 15px;
+  margin-right: 18px;
   font-size: 16px;
+  text-transform: uppercase;
   border: none;
 }
 
@@ -379,52 +384,46 @@ body {
   outline: none;
 }
 
-/* CSS for always blinking cursor */
-@keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: black }
-}
-.search-input:focus { animation: blink 1s step-end infinite; }
-
-.search-btns {
+.search-button {
   margin-top: 20px;
+  text-align: center;
 }
 
-.search-btns button {
+.search-button button {
   background-color: black;
   color: white;
   border: 0px;
-  font-size: 1.1em;
+  font-size: 20px;
   height: 50px;
   width: 100px;
   text-align: center;
   cursor: pointer;
 }
 
-.search-btns button:hover {
-  color: #fb040c;
+.search-button button:hover {
   border: 0px;
   background-color: black;
+  font-weight: 900;
+  font-size: 24px;
 }
 
 /* Basic styling for buttons */
 .select-button button {
-  background-color: black;
+  background-color: transparent;
   border: 1px;
-  color:#5b6063;
+  color:rgb(138, 138, 138);
   font-family: arial, sans-serif;
-  font-size: 1em;
+  font-size: 14px;
   margin: 5px 5px 5px 5px;
-  line-height: 27px;
+  margin-top: 30px;
   width: 150px;
-  height: 55px;
   text-align: center;
   cursor: pointer;
 }
 
 /* Styling for the selected button */
 .select-button button.selected {
-  background-color: black;
+  background-color: transparent;
   color: rgb(253, 0, 63);
 
   .google-search-btn {
@@ -478,7 +477,7 @@ body {
     }
 
     /* Buttons */
-    .search-btns button {
+    .search-button button {
       height: 30px;
       font-size: 12px;
     }
@@ -629,3 +628,4 @@ body {
     text-align: center; /* This centers text horizontally */
     background: #f3f4f6; /* Light gray background */
     font-family: 'Arial', sans-serif; /* Example font */
+  }}}

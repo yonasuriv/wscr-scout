@@ -1,98 +1,42 @@
-document.getElementById("mainButton").addEventListener("click", function(event) {
-    event.preventDefault();
-
-    const selectedOption = document.querySelector('input[name="option"]:checked');
-
-    if (selectedOption) {
-        const link = selectedOption.value;
-        const input = document.getElementById("search-input").value;
-        if (input != "" && input != null) {
-            window.location.href = link + encodeURIComponent(input);
-        } else {
-            alert("Please enter a search query.");
-        }
-    } else {
-        alert("Please select a search engine.");
-    }
+// Disable right-click
+document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    }, false);
 });
 
-document.getElementById("search-input").addEventListener("keydown", function(event) {
-    if (event.code === "Enter") {
-        const selectedOption = document.querySelector('input[name="option"]:checked');
-
-        if (selectedOption) {
-            const link = selectedOption.value;
-            const input = document.getElementById("search-input").value;
-            if (input != "" && input != null) {
-                window.location.href = link + encodeURIComponent(input);
-            } else {
-                alert("Please enter a search query.");
-            }
-        } else {
-            alert("Please select a search engine.");
-        }
-    }
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const buttons = document.querySelectorAll('.select-button button');
     const form = document.getElementById('myForm');
-    const searchInput = document.getElementById('search-input');
 
     buttons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             buttons.forEach(b => b.classList.remove('selected'));
             button.classList.add('selected');
-            form.action = button.value; // Update the form's action to use the selected search engine
+            form.action = button.value;
         });
     });
 
-    // Set initial state
-    form.action = document.querySelector('.selected').value;
-
-// Disable right click
-document.addEventListener('contextmenu', function(event) {
-    event.preventDefault();
-});
-
-/* Light/Dark Mode Function
-
-// JavaScript to handle day/dark mode toggle
-const modeToggle = document.getElementById("modeToggle");
-
-modeToggle.addEventListener("change", () => {
-    if (modeToggle.checked) {
-        // Dark mode is activated
-        document.body.classList.add("dark-mode");
+    if (document.querySelector('.selected')) {
+        form.action = document.querySelector('.selected').value;
     } else {
-        // Day mode is activated
-        document.body.classList.remove("dark-mode");
+        buttons[0].classList.add('selected');
+        form.action = buttons[0].value;
     }
 });
 
+// Focus the input in the search box field when the page loads
+document.addEventListener('DOMContentLoaded', function () {
+    const input = document.getElementById('search-input');
+    input.focus(); 
 
-function toggle_light_mode() {
-    var app = document.getElementsByTagName("BODY")[0];
-    if (localStorage.lightMode == "dark") {
-        localStorage.lightMode = "light";
-        app.setAttribute("light-mode", "light");
-    } else {
-        localStorage.lightMode = "dark";
-        app.setAttribute("light-mode", "dark");
-    }
-}
+     // Re-focus the input whenever the user clicks anywhere
+    document.addEventListener('click', function () {
+        input.focus();
+    });
 
-window.addEventListener(
-    "storage",
-    function () {
-        if (localStorage.lightMode == "dark") {
-            app.setAttribute("light-mode", "dark");
-        } else {
-            app.setAttribute("light-mode", "light");
-        }
-    },
-    false
-);
-
-*/
+    // Re-focus on the input field when typing anywhere
+    document.addEventListener('keydown', function (event) {
+        input.focus();
+    });
+});

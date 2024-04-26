@@ -2,11 +2,11 @@
 <html lang="en" style="overflow: hidden;">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" href="./assets/img/favicon.ico">
     <link rel="stylesheet" href="./assets/simplebar.css">
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/vendor/fontawesome/css/all.min.css">
@@ -15,24 +15,18 @@
     <link rel="stylesheet" href="./assets/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <script src="./assets/main.js" defer></script>
-
+    <link rel="icon" href="./assets/img/favicon.ico">
     <title>W/ Scout - OSINT Search Engine</title>
 
 </head>
 
 <body>
-    <div class="container-fluid">
-        <header> <!--
-            <nav class="navbar ">
-                <div class="circle-shadow">
-                    <a href="https://github.com/yonasuriv/wscr-scout" target="_blank">
-                        <img id="github" src="./assets/img/github2.png" alt="GitHub">
-                    </a>
-                </div>
-            </nav> -->
+
+        <header> 
+            <!-- 
+
+            -->
         </header>
-    </div>
 
     <div class="dark-content body">
 
@@ -93,14 +87,12 @@
         </div>
 
         <div class="decode-text">
-            <div class="text-animation h1 state-1 state-2 state-3">W</div>
-            <div class="text-animation h1 state-1 state-2 state-3">/</div>
-            <div class="space"></div>
-            <div class="text-animation h1 state-1 state-2 state-3">S</div>
-            <div class="text-animation h1 state-1 state-2 state-3">C</div>
-            <div class="text-animation h1 state-1 state-2 state-3">O</div>
+            <div class="text-animation h1 state-1 state-2 state-3">V</div>
+            <div class="text-animation h1 state-1 state-2 state-3">A</div>
+            <div class="text-animation h1 state-1 state-2 state-3">R</div>
             <div class="text-animation h1 state-1 state-2 state-3">U</div>
-            <div class="text-animation h1 state-1 state-2 state-3">T</div>
+            <div class="text-animation h1 state-1 state-2 state-3">N</div>
+            <div class="text-animation h1 state-1 state-2 state-3">A</div>
             <div class="space"></div>
             <br>
             <div class="text-animation h2 state-1 state-2 state-3">O</div>
@@ -125,90 +117,46 @@
             <div class="space"></div>
         </div>
 
-        <div class="form-container">
-            <form id="myForm" action="https://www.google.com/search?q=" method="get">
+        <div class="search-container">
+            <form id="myForm" action="https://www.google.com/search?q=" method="get" autocomplete="off">
+
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input id="search-input" class="search-input" type="text" name="q">
+                </div>
+
                 <div class="select-button">
-                    <button type="button" name="option" value="https://www.startpage.com/do/search?q=" class="selected">Start Page</button>
+                    <button type="button" name="option" value="https://www.startpage.com/do/search?q="
+                        class="selected">Start Page</button>
                     <button type="button" name="option" value="https://duckduckgo.com/?q=">DuckDuckGo</button>
                     <button type="button" name="option" value="https://search.brave.com/search?q=">Brave</button>
                     <button type="button" name="option" value="https://search.ononoki.org/search?q=">SearX</button>
                     <button type="button" name="option" value="https://www.google.com/search?q=">Google</button>
                     <!-- <button type="button" name="option" value="https://metager.org/meta/meta.ger3?eingabe=">Metager</button> NEED TO CHANGE SEARCH TYPE TO APPEND -->
                     <!-- <button type="button" name="option" value="https://wg.vern.cc/search?q=">Whoogle</button> OFFLINE -->
-                    
                 </div>
-                <div class="search-bar">
-                    <i class="fas fa-search"></i>
-                    <input id="search-input" class="search-input" type="text" name="q">
+
+                <div class="search-button">
+                    <button type="submit" class="submit" id="mainButton"></button> <!-- 'SEARCH' text removed -->
                 </div>
-        
-        <div class="search-btns">
-            <button type="submit" class="submit" id="mainButton"></button> <!-- 'SEARCH' text removed -->
+
+            </form>
         </div>
-        </form>
-    </div>
 
-    <script>
-        function updateAction(baseURL, paramName) {
-            var searchQuery = document.getElementById("search-input").value;
-            document.getElementById("myForm").action = baseURL + encodeURIComponent(searchQuery);
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-            // Disable right click
-            document.addEventListener('contextmenu', function (e) {
-                e.preventDefault();
-            }, false);
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            const buttons = document.querySelectorAll('.select-button button');
-            const form = document.getElementById('myForm');
-
-            buttons.forEach(button => {
-                button.addEventListener('click', function () {
-                    buttons.forEach(b => b.classList.remove('selected'));
-                    button.classList.add('selected');
-                    form.action = button.value;
-                });
-            });
-
-            if (document.querySelector('.selected')) {
-                form.action = document.querySelector('.selected').value;
-            } else {
-                buttons[0].classList.add('selected');
-                form.action = buttons[0].value;
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const input = document.getElementById('search-input');
-            input.focus(); // Focus the input when the page loads
-
-            document.addEventListener('click', function () {
-                input.focus(); // Re-focus the input whenever the user clicks anywhere
-            });
-
-            // Optional: refocus on the input field when typing anywhere
-            document.addEventListener('keydown', function (event) {
-                input.focus();
-            });
-        });
-
-    </script>
-    <script src="./assets/jquery.min.js.download"></script>
-    <script src="./assets/anime.min.js.download"></script>
-    <script src="./assets/index.js.download"></script>
+        <script src="./assets/main.js" defer></script>
+        <script src="./assets/jquery.min.js.download"></script>
+        <script src="./assets/anime.min.js.download"></script>
+        <script src="./assets/index.js.download"></script>
 
 </body>
 
 <footer>
     <div class="circle-shadow">
-        <a href="https://github.com/yonasuriv/wscr-scout" target="_blank">
-            <img id="github-footer" src="./assets/img/github2.png" alt="GitHub">
+        <a href="https://github.com/yonasuriv/varuna" target="_blank">
+            <img id="github-footer" src="./assets/img/github.png" alt="GitHub">
         </a>
     </div>
-    <p id="version">wscout.dev.preprd-v0.7.5</p>
+    <p id="version">wscout.dev.preprd-v0.7.6</p>
 </footer>
 
 </html>
