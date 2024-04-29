@@ -2,7 +2,7 @@
 <html lang="en" style="overflow: hidden;">
 
 <head>
-    
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,12 +21,7 @@
 </head>
 
 <body>
-
-        <header> 
-            <!-- 
-
-            -->
-        </header>
+    <header id="menu"></header>
 
     <div class="dark-content body">
 
@@ -118,30 +113,31 @@
         </div>
 
         <div class="search-container">
-            <form id="myForm" action="https://www.google.com/search?q=" method="get" autocomplete="off">
-
+            <form id="myForm" action="https://www.google.com/search" method="get" autocomplete="off">
                 <div class="search-bar">
                     <i class="fas fa-search"></i>
-                    <input id="search-input" class="search-input" type="text" name="q">
+                    <input id="search-input" class="search-input" type="text" name="query">
                 </div>
-
+            
                 <div class="select-button">
-                    <button type="button" name="option" value="https://www.startpage.com/do/search?q="
-                        class="selected">Start Page</button>
-                    <button type="button" name="option" value="https://duckduckgo.com/?q=">DuckDuckGo</button>
-                    <button type="button" name="option" value="https://search.brave.com/search?q=">Brave</button>
-                    <button type="button" name="option" value="https://search.ononoki.org/search?q=">SearX</button>
-                    <button type="button" name="option" value="https://www.google.com/search?q=">Google</button>
-                    <!-- <button type="button" name="option" value="https://metager.org/meta/meta.ger3?eingabe=">Metager</button> NEED TO CHANGE SEARCH TYPE TO APPEND -->
-                    <!-- <button type="button" name="option" value="https://wg.vern.cc/search?q=">Whoogle</button> OFFLINE -->
+                    <button type="button" value="https://www.startpage.com/do/search?q=" data-name="q">Start Page</button>
+                    <button type="button" value="https://search.ononoki.org/search?q=" data-name="q">SearX</button>
+                    <button type="button" value="https://www.shodan.io/search?query=" data-name="query">Shodan</button>
+                    <button type="button" value="https://metager.org/meta/meta.ger3?eingabe=" data-name="eingabe">Metager</button>
+                    <button type="button" value="https://duckduckgo.com/?q=" data-name="q">DuckDuckGo</button>
+                    <button type="button" value="https://search.brave.com/search?q=" data-name="q">Brave</button>
+                    <button type="button" value="https://www.bing.com/search?q=" data-name="q">Bing</button>
+                    <button type="button" value="https://www.google.com/search?q=" data-name="q">Google</button>
+                    
                 </div>
-
+            
                 <div class="search-button">
-                    <button type="submit" class="submit" id="mainButton"></button> <!-- 'SEARCH' text removed -->
+                    <button type="submit" class="submit" id="mainButton"></button>
                 </div>
-
             </form>
         </div>
+
+        
 
         <script src="./assets/main.js" defer></script>
         <script src="./assets/jquery.min.js.download"></script>
@@ -149,14 +145,18 @@
         <script src="./assets/index.js.download"></script>
 
 </body>
-
+<script src="https://kit.fontawesome.com/a14e112265.js" crossorigin="anonymous"></script>
 <footer>
     <div class="circle-shadow">
         <a href="https://github.com/yonasuriv/varuna" target="_blank">
             <img id="github-footer" src="./assets/img/github.png" alt="GitHub">
         </a>
     </div>
-    <p id="version">wscout.dev.preprd-v0.7.6</p>
+    <div class="image-container">
+        <img id="flag" src="./assets/img/flag.png" alt="flag">
+        <p id="version">ws-varuna.dev.preprd-v0.8.1</p>
+    </div>
+    
 </footer>
 
 </html>

@@ -1,3 +1,239 @@
+a {
+    color: rgb(253, 0, 63);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(253, 0, 63);
+}
+
+nav {
+    display: flex;
+    margin-top: 10px;
+    background: transparent;
+    border-radius: 20px;
+    justify-content: left;
+}
+
+.menu {
+    display: block;
+    
+}
+
+.menu li {
+    display: inline-block;
+    position: relative;
+    z-index: 100;
+}
+
+.menu li:first-child {
+    margin-left: 0;
+}
+
+.menu li a {
+    font-weight: 600;
+    text-decoration: none;
+    padding: 15px 50px;
+    display: block;
+    color: rgb(138, 138, 138);
+    transition: all 0.2s ease-in-out 0s;
+}
+
+.menu li a:hover,.menu li:hover>a {
+    background: transparent;
+    color: rgb(253, 0, 63);
+}
+
+.menu ul {
+    visibility: hidden;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    width: 350px;
+    position: absolute;
+    left: 0px;
+    background: black;
+    border-radius: 10px;
+    z-index: 99;
+    transform: translate(0,20px);
+    transition: all 0.2s ease-out;
+}
+
+.menu ul:after {
+    bottom: 100%;
+    left: 20%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    margin-left: -6px;
+}
+
+.menu ul li {
+    display: block;
+    float: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li a {
+    font-size: 12px;
+    font-weight: normal;
+    display: block;
+    color: white;
+    border-radius: 10px;
+    background: transparent;
+}
+
+.menu ul li a:hover,.menu ul li:hover>a {
+    background: rgb(253, 0, 63);
+    color: #fff;
+}
+
+.menu li:hover>ul {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
+    
+}
+
+.menu ul ul {
+    left: 270px;
+    top: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(20px,20px);
+    transition: all 0.2s ease-out;
+    margin-left: 90px;
+}
+
+.menu ul ul:after {
+    left: -6px;
+    top: 10%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 10px;
+}
+
+.menu li>ul ul:hover {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+.responsive-menu {
+    display: none;
+    width: 100%;
+    padding: 20px 15px;
+    background: #374147;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.responsive-menu:hover {
+    background: #374147;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.homer {
+    background: transparent;
+    color: rgb(253, 0, 63);
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+    .mainWrap {
+        width: 768px;
+    }
+
+    .menu ul {
+        top: 37px;
+    }
+
+    .menu li a {
+        font-size: 12px;
+    }
+
+    a.homer {
+        background: #374147;
+    }
+}
+
+@media (max-width: 767px) {
+    .mainWrap {
+        width: auto;
+        padding: 50px 20px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .responsive-menu {
+        display: block;
+        margin-top: 100px;
+    }
+
+    nav {
+        margin: 0;
+        background: none;
+    }
+
+    .menu li {
+        display: block;
+        margin: 0;
+    }
+
+    .menu li a {
+        background: #fff;
+        color: #797979;
+    }
+
+    .menu li a:hover,.menu li:hover>a {
+        background: rgb(253, 0, 63);
+        color: #fff;
+    }
+
+    .menu ul {
+        visibility: hidden;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: initial;
+    }
+
+    .menu li:hover>ul {
+        visibility: visible;
+        opacity: 1;
+        position: relative;
+        transform: initial;
+    }
+
+    .menu ul ul {
+        left: 0;
+        transform: initial;
+    }
+
+    .menu li>ul ul:hover {
+        transform: initial;
+    }
+}
+
+@media (max-width: 480px) {
+}
+
+@media (max-width: 320px) {
+}
+
 * {
   font-family: "Red Hat Display", "Bebas Neue", "Share Tech Mono", "Aptos Display", "Century Gothic", monospace;
   box-sizing: border-box;
@@ -27,9 +263,10 @@ h1 {
 
 .decode-text {
   width: 100%;
-  margin-top: -78px;
-  margin-bottom: 98px;
-  font-size: 42px;
+  margin-top: -360px;
+  margin-bottom: 150px;
+  margin-left: 25px;
+  font-size: 35px;
   text-align: center;
 }
 
@@ -39,14 +276,10 @@ h1 {
 }
 
 .h1 {
-  font-family: "Aptos Display", "Century Gothic", monospace;
-
   font-size: 64px;
 }
 
 .h2 {
-  font-family: "Aptos Display", "Century Gothic", monospace;
-
   font-size: 18px;
   font-weight: 900;
 }
@@ -66,7 +299,7 @@ h1 {
   left: 50%;
   background: white;
   width: 0;
-  height: 19.2px;
+  height: 40px;
   -webkit-transform: translate(-50%, -55%);
   -ms-transform: translate(-50%, -55%);
   transform: translate(-50%, -55%);
@@ -95,20 +328,18 @@ h1 {
   cursor: pointer;
 }
 
-
-
+/*
 .animation-wrapper {
   width: 20%;
   height: 35%;
-}
+} */
 
 .sphere-animation {
   position: flex;
   top: 50%;
   left: 50%;
-  width: 520px;
+  width: 420px;
   height: 520px;
-  margin: -50px 0 0 -290px;
 }
 
 .sphere path {
@@ -259,11 +490,31 @@ body {
   max-height: 120%;
 }
 
+.image-container {
+  display: inline-block;
+  position: relative;
+  padding: 20px;
+}
+
+.image-container:hover {
+  pointer-events: auto; /* Allow hover effects even when hovering over padding */
+}
+
+.image-container:hover #flag {
+  opacity: 0; /* Make the flag disappear on hover */
+}
+
+.image-container:hover #version {
+  opacity: 1; /* Make the version appear on hover */
+}
+
 #version {
+  font-size: 19px;
+  display: none;
   color: #525252;
   position: fixed;  /* Fixed position relative to the viewport */
   left: 20px;      /* Distance from the right edge of the viewport */
-  bottom: 0px;     /* Distance from the bottom edge of the viewport */
+  bottom: 10px;     /* Distance from the bottom edge of the viewport */
   width: 400px;      /* Optional: Adjust the width as necessary */
   height: auto;     /* Maintains the aspect ratio of the SVG */
   align-items: self-start;
@@ -273,6 +524,40 @@ body {
   margin-top: 1em;
   max-width: 120%;
   max-height: 120%;
+  opacity: 0; /* Initially hide the version */
+  transition: opacity 0.3s ease;
+}
+
+#flag {
+  color: #525252;
+  position: fixed;  /* Fixed position relative to the viewport */
+  left: 20px;      /* Distance from the right edge of the viewport */
+  bottom: 30px;     /* Distance from the bottom edge of the viewport */
+  width: 280px;      /* Optional: Adjust the width as necessary */
+  height: auto;     /* Maintains the aspect ratio of the SVG */
+  align-items: self-start;
+  justify-self: self-start;
+  align-items: self-start;
+  padding-top: 1em;
+  margin-top: 1em;
+  max-width: 70%;
+  max-height: 200%;
+  transition: opacity 0.3s ease;
+  animation: glitch 3s forwards;
+}
+
+#flag:hover + #version {
+  display: block; /* Display the paragraph when the image is hovered */
+  margin-bottom: 40px;
+}
+
+@keyframes glitch {
+  0%, 20%, 50%, 80%, 100% {
+      opacity: 1;
+  }
+  10%, 30%, 40%, 60%, 70% {
+      opacity: 0;
+  }
 }
 
 .navbar ul {
@@ -413,10 +698,11 @@ body {
   border: 1px;
   color:rgb(138, 138, 138);
   font-family: arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   margin: 5px 5px 5px 5px;
   margin-top: 30px;
-  width: 150px;
+  margin-left: 10px;
+  width: 80px;
   text-align: center;
   cursor: pointer;
 }
